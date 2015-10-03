@@ -1,4 +1,4 @@
-function myFunction(it){
+function myFunction(){
       var idd = document.getElementById("acn").value ;
       var action = "" ;
       var ret = false ;
