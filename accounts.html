@@ -8,12 +8,35 @@
  </head>
  <body>
 <h2>hello</h2>
+<p id="result"></p>
 
   <script src="jquery.min.js" type="text/javascript"></script>
-<<<<<<< HEAD
   <script type="text/javascript" src="app.js"></script>
-=======
->>>>>>> parent of 396b0a9... app.js and passing results
+  <script type="text/javascript">
+  	window.onload = function getIds()
+	{
+		var action=""
+		$.ajax({
+        url: sessionStorage.ids,
+        success: function(results){
+            console.log(results) ;
+            for(var i = 0 ; i < results.length ; i++)
+            {
+              action += "id=" + results[i]._id + "," ;
+
+            }
+            sessionStorage.setItem("ids", action) ;
+            console.log(action) ;
+           document.getElementById("result").innerHTML = action ;
+
+        },
+
+    fail: function(){
+      console.log("fail") ;
+    }
+});
+    }
+  </script>
   <script type="text/javascript" src="angular.min.js"></script>
   <script type="text/javascript" src="js/bootstrap.min.js"></script>
  </body>
