@@ -5,8 +5,9 @@
 
     app.controller('accountController',['$http', '$scope', function($http, $scope){
         $scope.account = {
-            actions: []
-        }
+            actions: [],
+            number:[] 
+        } 
 
         $http({
             method: 'GET',
@@ -16,6 +17,8 @@
             for(var i = 0 ; i < out.length ; i++)
             {
                 $scope.account.actions[i]=out[i].nickname ;
+                $scope.account.number[i]=out[i]._id ;
+                console.log($scope.account.number[i]) ;
             }
             /*for (var i = 0; i < out.data.length; i++) {
                 $scope.account.actions.push(out.data[i]);
@@ -25,7 +28,9 @@
             console.log(response) ;
             });
 
-            console.log($scope.account.actions[0])
-
+            $scope.onclick = function onClick(i)
+            {
+                console.log(i) ;
+            }
        }]) ;
 })();

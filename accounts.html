@@ -8,9 +8,17 @@
  </head>
  <body ng-controller="accountController">
 <h2>hello</h2>
-<div ng-repeat="action in account.actions track by $index">
-	{{action}} 
+<div class="container">
+<div class="row">
+<div class="col-md-12" id="bg">
+	<a href="" id="accounts-inside" ng-repeat="action in account.actions track by $index"><div id="family-members">
+	<div ng-click="onclick($index)">{{action}}</div>
+</div></a>
+
 </div>
+</div>
+</div>
+
 
 
 
