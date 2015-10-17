@@ -10,7 +10,7 @@
  	<div class="container">
  		<div class="row">
  			<div class="col-md-12">
- 				<div ng-repeat="amount in purchases.mnames track by $index" id="rest"><div>{{amount}}:{{purchases.amounts[$index] | currency}}</div></div>
+ 				<div ng-repeat="amount in purchases.mnames track by $index" id="rest"><div ng-click="clicky()">{{amount}}:{{purchases.amounts[$index] | currency}}</div></div>
  			</div>	
  		</div>	
  	</div>
